@@ -1,6 +1,0 @@
-flow_id,best_security_margin_method,best_security_margin_value,best_secure_feasible_method,best_secure_feasible_value,best_latency_method,best_latency_value
-F1,qkd_priority,0.04622045805718878,proposed,0.9034722222222222,latency_first,42.17157965282806
-F2,milp_max_secure,0.11451534732296123,proposed,0.98125,latency_first,43.655956296420875
-F3,milp_max_secure,0.20628269855506395,milp_max_secure,0.9923611111111111,latency_first,14.15011507878473
-F4,milp_max_secure,0.41338848070114337,latency_first,0.9979166666666667,latency_first,11.462822434399609
-F5,milp_max_secure,0.26089959992658046,pqc_trust,0.9881944444444445,latency_first,16.841320258529002

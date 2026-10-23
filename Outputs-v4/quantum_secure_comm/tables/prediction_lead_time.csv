@@ -1,5 +1,0 @@
-alarm_rule,failure_onsets,detected_onsets,detection_rate,mean_lead_time,median_lead_time,alarm_steps,false_alarm_fraction
-SCI below secure threshold,616,512,0.8311688311688312,1.998046875,1.0,2668,0.550599700149925
-SCI_composite (p >= 0.5),616,50,0.08116883116883117,1.1,1.0,120,0.18333333333333332
-observable_baseline (p >= 0.5),616,48,0.07792207792207792,1.4375,1.0,113,0.19469026548672566
-mean_qber (Youden),616,392,0.6363636363636364,1.941326530612245,1.0,1503,0.39454424484364603
