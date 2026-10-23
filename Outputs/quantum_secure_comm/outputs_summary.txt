@@ -82,13 +82,23 @@ Path stability summary:
 - F5: path_switch_rate=0.404, status_switch_rate=0.043, key_layer_switch_rate=0.043, unique_paths_used=4, secure_fraction=0.979
 
 Exported figures:
+- fig10_regime_threshold_calibration.pdf
 - fig10_regime_threshold_calibration.png
+- fig1_role_aware_topology.pdf
 - fig1_role_aware_topology.png
+- fig2_allocation_outcomes_over_time.pdf
 - fig2_allocation_outcomes_over_time.png
+- fig3_sci_over_time.pdf
 - fig3_sci_over_time.png
+- fig4_secure_feasibility_and_allocation.pdf
 - fig4_secure_feasibility_and_allocation.png
+- fig5_hybrid_contribution_dynamics.pdf
 - fig5_hybrid_contribution_dynamics.png
+- fig6_security_margin_vs_latency.pdf
 - fig6_security_margin_vs_latency.png
+- fig7_per_flow_feasibility_and_allocation.pdf
 - fig7_per_flow_feasibility_and_allocation.png
+- fig8_path_and_status_switching.pdf
 - fig8_path_and_status_switching.png
+- fig9_free_energy_over_time.pdf
 - fig9_free_energy_over_time.png

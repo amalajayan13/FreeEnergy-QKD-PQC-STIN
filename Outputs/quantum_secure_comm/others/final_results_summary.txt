@@ -193,12 +193,12 @@ Quantum-Secure 6G STIN - Results Summary
 - reference: nodes=10, edges=18.0, flows=5
 - medium: nodes=22, edges=54.0, flows=12
 - large: nodes=44, edges=110.0, flows=24
-    * proposed, large, compound_stress: weighted_secure_ratio=0.5150, decision_time_per_slot=36.0 ms
-    * proposed, large, nominal: weighted_secure_ratio=0.8581, decision_time_per_slot=44.6 ms
-    * proposed, medium, compound_stress: weighted_secure_ratio=0.5234, decision_time_per_slot=13.4 ms
-    * proposed, medium, nominal: weighted_secure_ratio=0.8679, decision_time_per_slot=14.8 ms
-    * proposed, reference, compound_stress: weighted_secure_ratio=0.6538, decision_time_per_slot=4.7 ms
-    * proposed, reference, nominal: weighted_secure_ratio=0.9718, decision_time_per_slot=4.9 ms
+    * proposed, large, compound_stress: weighted_secure_ratio=0.5150, decision_time_per_slot=41.7 ms
+    * proposed, large, nominal: weighted_secure_ratio=0.8581, decision_time_per_slot=50.8 ms
+    * proposed, medium, compound_stress: weighted_secure_ratio=0.5234, decision_time_per_slot=18.4 ms
+    * proposed, medium, nominal: weighted_secure_ratio=0.8679, decision_time_per_slot=17.5 ms
+    * proposed, reference, compound_stress: weighted_secure_ratio=0.6538, decision_time_per_slot=5.6 ms
+    * proposed, reference, nominal: weighted_secure_ratio=0.9718, decision_time_per_slot=5.8 ms
 
 11. Key findings
 - Nominal: proposed is significantly better than 4/5 baselines in weighted secure ratio (p<0.05): milp_max_secure, max_security, latency_first, pqc_trust.
@@ -266,44 +266,83 @@ Tables:
 - summary_by_time.csv
 
 Figures:
+- fig10_regime_threshold_calibration.pdf
 - fig10_regime_threshold_calibration.png
+- fig11_method_overall_comparison.pdf
 - fig11_method_overall_comparison.png
+- fig12_sci_over_time_by_method.pdf
 - fig12_sci_over_time_by_method.png
+- fig13_secure_ratio_and_key_reserve_by_method.pdf
 - fig13_secure_ratio_and_key_reserve_by_method.png
+- fig14_allocation_state_composition_by_method.pdf
 - fig14_allocation_state_composition_by_method.png
+- fig15_per_flow_security_margin_by_method.pdf
 - fig15_per_flow_security_margin_by_method.png
+- fig16_latency_vs_quantum_share_by_method.pdf
 - fig16_latency_vs_quantum_share_by_method.png
+- fig17_energy_and_key_efficiency_by_method.pdf
 - fig17_energy_and_key_efficiency_by_method.png
+- fig18_secure_ratio_by_scenario_and_method.pdf
 - fig18_secure_ratio_by_scenario_and_method.png
+- fig19_sci_and_deficit_by_scenario_and_method.pdf
 - fig19_sci_and_deficit_by_scenario_and_method.png
+- fig1_role_aware_topology.pdf
 - fig1_role_aware_topology.png
+- fig20_latency_and_energy_by_scenario_and_method.pdf
 - fig20_latency_and_energy_by_scenario_and_method.png
+- fig21a_secure_ratio_advantage_heatmap.pdf
 - fig21a_secure_ratio_advantage_heatmap.png
+- fig21b_sci_advantage_heatmap.pdf
 - fig21b_sci_advantage_heatmap.png
+- fig21c_energy_advantage_heatmap.pdf
 - fig21c_energy_advantage_heatmap.png
+- fig22_operating_regime_diagram.pdf
 - fig22_operating_regime_diagram.png
+- fig23_stress_sweeps_secure_ratio.pdf
 - fig23_stress_sweeps_secure_ratio.png
+- fig24_stress_sweeps_sci.pdf
 - fig24_stress_sweeps_sci.png
+- fig25_stress_sweeps_energy.pdf
 - fig25_stress_sweeps_energy.png
+- fig26_sensitivity_tornado.pdf
 - fig26_sensitivity_tornado.png
+- fig27_sensitivity_profiles.pdf
 - fig27_sensitivity_profiles.png
+- fig28_ablation_comparison.pdf
 - fig28_ablation_comparison.png
+- fig29_ablation_effect_heatmap.pdf
 - fig29_ablation_effect_heatmap.png
+- fig2_allocation_outcomes_over_time.pdf
 - fig2_allocation_outcomes_over_time.png
+- fig30_sci_over_time_ablation.pdf
 - fig30_sci_over_time_ablation.png
+- fig31_prediction_auc_vs_horizon.pdf
 - fig31_prediction_auc_vs_horizon.png
+- fig32_prediction_roc_curves.pdf
 - fig32_prediction_roc_curves.png
+- fig33_prediction_lead_time.pdf
 - fig33_prediction_lead_time.png
+- fig34_prediction_example_trace.pdf
 - fig34_prediction_example_trace.png
+- fig35_free_energy_temperature_sensitivity.pdf
 - fig35_free_energy_temperature_sensitivity.png
+- fig36_energy_security_tradeoff.pdf
 - fig36_energy_security_tradeoff.png
+- fig37_scalability.pdf
 - fig37_scalability.png
+- fig3_sci_over_time.pdf
 - fig3_sci_over_time.png
+- fig4_secure_feasibility_and_allocation.pdf
 - fig4_secure_feasibility_and_allocation.png
+- fig5_hybrid_contribution_dynamics.pdf
 - fig5_hybrid_contribution_dynamics.png
+- fig6_security_margin_vs_latency.pdf
 - fig6_security_margin_vs_latency.png
+- fig7_per_flow_feasibility_and_allocation.pdf
 - fig7_per_flow_feasibility_and_allocation.png
+- fig8_path_and_status_switching.pdf
 - fig8_path_and_status_switching.png
+- fig9_free_energy_over_time.pdf
 - fig9_free_energy_over_time.png
 
-Total notebook runtime: 34.3 min
+Total notebook runtime: 37.6 min

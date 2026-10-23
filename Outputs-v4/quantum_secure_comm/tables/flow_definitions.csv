@@ -1,0 +1,6 @@
+flow_id,src,dst,mission,security_req,priority,traffic_demand,key_demand
+F1,SAT_1,DC_1,satellite_telemetry_backhaul,0.78,1.0,5.0,1.5
+F2,SAT_2,BS_1,secure_satellite_access_delivery,0.72,0.94,4.0,1.2
+F3,UAV_1,DC_1,uav_control_and_data_return,0.68,0.88,4.5,0.9
+F4,GW_2,BS_1,gateway_to_edge_service_sync,0.5,0.78,3.5,0.6
+F5,UAV_2,BS_3,uav_to_local_edge_delivery,0.62,0.82,3.0,0.75
