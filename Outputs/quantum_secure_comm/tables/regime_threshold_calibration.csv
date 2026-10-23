@@ -1,0 +1,9 @@
+quantity,value
+logistic_intercept,-0.800651046752969
+logistic_slope,-6.5702032165032405
+p_secure,0.1
+p_sparse,0.5
+theta_secure,0.2125616947547822
+theta_sparse,-0.1218609258145728
+calibration_rows,3525.0
+calibration_failure_rate,0.17191489361702128

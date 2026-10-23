@@ -1,67 +1,88 @@
-Quantum-Secure 6G STIN Hybrid Allocation Prototype
+Quantum-Secure 6G STIN Hybrid Allocation (reference run, scenario: satellite_channel_stress)
 ====================================================================
 Number of nodes: 10
 Number of edges: 18
 Number of flows: 5
-Time steps: 24
+Time steps: 48
+Regime thresholds: secure >= 0.2126, sparse < -0.1219
 
 Overall allocation-state counts:
-- degraded_unallocated: 48
-- secure_allocated: 38
-- best_effort_allocated: 31
-- blocked: 3
+- secure_allocated: 196
+- best_effort_allocated: 38
+- degraded_unallocated: 0
+- blocked: 6
 
 Overall regime counts:
-- sparse: 20
-- transition: 4
+- secure: 22
+- transition: 23
+- sparse: 3
 
 Flow-level summary:
-- F1 (satellite_telemetry_backhaul): secure_feasible_ratio=0.000, allocated_ratio=0.000, avg_security_level=0.1156, avg_security_margin=-0.4644, avg_functional_score=-0.5652, avg_q_share=0.3633, avg_trust=0.7903, avg_risk=0.2745, avg_latency=56.97, dominant_regime=sparse, dominant_selection_status=degraded_unallocated
-- F2 (secure_satellite_access_delivery): secure_feasible_ratio=0.000, allocated_ratio=0.042, avg_security_level=0.1133, avg_security_margin=-0.4067, avg_functional_score=-0.4250, avg_q_share=0.3777, avg_trust=0.7907, avg_risk=0.2700, avg_latency=46.44, dominant_regime=sparse, dominant_selection_status=degraded_unallocated
-- F3 (uav_control_and_data_return): secure_feasible_ratio=0.333, allocated_ratio=0.958, avg_security_level=0.4345, avg_security_margin=-0.0455, avg_functional_score=0.0471, avg_q_share=0.2914, avg_trust=0.8385, avg_risk=0.2270, avg_latency=16.04, dominant_regime=sparse, dominant_selection_status=best_effort_allocated
-- F4 (gateway_to_edge_service_sync): secure_feasible_ratio=0.333, allocated_ratio=0.875, avg_security_level=0.3738, avg_security_margin=-0.0662, avg_functional_score=-0.0969, avg_q_share=0.4654, avg_trust=0.7623, avg_risk=0.2684, avg_latency=27.27, dominant_regime=sparse, dominant_selection_status=best_effort_allocated
-- F5 (uav_to_local_edge_delivery): secure_feasible_ratio=0.917, allocated_ratio=1.000, avg_security_level=0.6593, avg_security_margin=0.1993, avg_functional_score=0.3745, avg_q_share=0.4911, avg_trust=0.8462, avg_risk=0.1710, avg_latency=9.12, dominant_regime=sparse, dominant_selection_status=secure_allocated
+- F1 (satellite_telemetry_backhaul): S_req=0.78, secure_feasible_ratio=0.438, allocated_ratio=0.958, avg_security_level=0.6403, avg_effective_margin=-0.1397, avg_q_share=0.438, avg_risk=0.2636, avg_latency=49.73, avg_energy=9.650, dominant_status=best_effort_allocated
+- F2 (secure_satellite_access_delivery): S_req=0.72, secure_feasible_ratio=0.729, allocated_ratio=0.979, avg_security_level=0.6971, avg_effective_margin=-0.0229, avg_q_share=0.729, avg_risk=0.3668, avg_latency=52.25, avg_energy=12.562, dominant_status=secure_allocated
+- F3 (uav_control_and_data_return): S_req=0.68, secure_feasible_ratio=0.938, allocated_ratio=0.958, avg_security_level=0.8533, avg_effective_margin=0.1733, avg_q_share=0.938, avg_risk=0.2199, avg_latency=18.65, avg_energy=2.770, dominant_status=secure_allocated
+- F4 (gateway_to_edge_service_sync): S_req=0.50, secure_feasible_ratio=1.000, allocated_ratio=1.000, avg_security_level=0.9096, avg_effective_margin=0.4096, avg_q_share=1.000, avg_risk=0.1719, avg_latency=14.56, avg_energy=1.016, dominant_status=secure_allocated
+- F5 (uav_to_local_edge_delivery): S_req=0.62, secure_feasible_ratio=0.979, allocated_ratio=0.979, avg_security_level=0.8521, avg_effective_margin=0.2321, avg_q_share=0.979, avg_risk=0.2990, avg_latency=15.42, avg_energy=2.740, dominant_status=secure_allocated
 
 Time-level summary:
-- t=0: secure_allocated=2, best_effort=1, degraded=2, blocked=0, secure_feasible_ratio=0.400, allocated_ratio=0.600, mean_security_margin=-0.1750, mean_q_share=0.4006, mean_risk=0.2037, SCI=0.20986, regime=sparse
-- t=1: secure_allocated=1, best_effort=1, degraded=3, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.400, mean_security_margin=-0.2861, mean_q_share=0.2487, mean_risk=0.2481, SCI=0.08967, regime=sparse
-- t=2: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1607, mean_q_share=0.4185, mean_risk=0.2036, SCI=0.10648, regime=sparse
-- t=3: secure_allocated=1, best_effort=0, degraded=1, blocked=3, secure_feasible_ratio=0.200, allocated_ratio=0.200, mean_security_margin=-0.3260, mean_q_share=0.1529, mean_risk=0.6848, SCI=0.05689, regime=sparse
-- t=4: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1680, mean_q_share=0.3605, mean_risk=0.1985, SCI=0.10356, regime=sparse
-- t=5: secure_allocated=3, best_effort=0, degraded=2, blocked=0, secure_feasible_ratio=0.600, allocated_ratio=0.600, mean_security_margin=-0.1336, mean_q_share=0.3331, mean_risk=0.2155, SCI=0.30813, regime=transition
-- t=6: secure_allocated=1, best_effort=1, degraded=3, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.400, mean_security_margin=-0.2395, mean_q_share=0.2870, mean_risk=0.2191, SCI=0.09543, regime=sparse
-- t=7: secure_allocated=2, best_effort=1, degraded=2, blocked=0, secure_feasible_ratio=0.400, allocated_ratio=0.600, mean_security_margin=-0.1091, mean_q_share=0.4359, mean_risk=0.2142, SCI=0.21806, regime=sparse
-- t=8: secure_allocated=2, best_effort=1, degraded=2, blocked=0, secure_feasible_ratio=0.400, allocated_ratio=0.600, mean_security_margin=-0.0986, mean_q_share=0.4021, mean_risk=0.2037, SCI=0.21688, regime=sparse
-- t=9: secure_allocated=3, best_effort=0, degraded=2, blocked=0, secure_feasible_ratio=0.600, allocated_ratio=0.600, mean_security_margin=-0.1035, mean_q_share=0.4363, mean_risk=0.2238, SCI=0.32620, regime=transition
-- t=10: secure_allocated=3, best_effort=0, degraded=2, blocked=0, secure_feasible_ratio=0.600, allocated_ratio=0.600, mean_security_margin=-0.1156, mean_q_share=0.4103, mean_risk=0.2154, SCI=0.32216, regime=transition
-- t=11: secure_allocated=3, best_effort=1, degraded=1, blocked=0, secure_feasible_ratio=0.600, allocated_ratio=0.800, mean_security_margin=-0.1383, mean_q_share=0.4232, mean_risk=0.2212, SCI=0.32000, regime=transition
-- t=12: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.2061, mean_q_share=0.4022, mean_risk=0.2444, SCI=0.10117, regime=sparse
-- t=13: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1121, mean_q_share=0.4329, mean_risk=0.2400, SCI=0.10720, regime=sparse
-- t=14: secure_allocated=2, best_effort=1, degraded=2, blocked=0, secure_feasible_ratio=0.400, allocated_ratio=0.600, mean_security_margin=-0.1261, mean_q_share=0.3967, mean_risk=0.2416, SCI=0.20933, regime=sparse
-- t=15: secure_allocated=2, best_effort=1, degraded=2, blocked=0, secure_feasible_ratio=0.400, allocated_ratio=0.600, mean_security_margin=-0.1118, mean_q_share=0.4608, mean_risk=0.2419, SCI=0.21700, regime=sparse
-- t=16: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1501, mean_q_share=0.4262, mean_risk=0.2438, SCI=0.10492, regime=sparse
-- t=17: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1138, mean_q_share=0.4787, mean_risk=0.2373, SCI=0.10957, regime=sparse
-- t=18: secure_allocated=2, best_effort=1, degraded=2, blocked=0, secure_feasible_ratio=0.400, allocated_ratio=0.600, mean_security_margin=-0.1063, mean_q_share=0.4850, mean_risk=0.2278, SCI=0.22160, regime=sparse
-- t=19: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1424, mean_q_share=0.4459, mean_risk=0.2241, SCI=0.10744, regime=sparse
-- t=20: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1551, mean_q_share=0.4439, mean_risk=0.2189, SCI=0.10708, regime=sparse
-- t=21: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1462, mean_q_share=0.4462, mean_risk=0.2137, SCI=0.10791, regime=sparse
-- t=22: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1859, mean_q_share=0.4361, mean_risk=0.2039, SCI=0.10621, regime=sparse
-- t=23: secure_allocated=1, best_effort=2, degraded=2, blocked=0, secure_feasible_ratio=0.200, allocated_ratio=0.600, mean_security_margin=-0.1512, mean_q_share=0.3832, mean_risk=0.2228, SCI=0.10399, regime=sparse
+- t=0: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.3422, R=0.3422, D=0.0000, F=0.6095, K=0.800, regime=secure
+- t=1: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.3140, R=0.3140, D=0.0000, F=0.5932, K=0.864, regime=secure
+- t=2: secure=3, best_effort=0, degraded=0, blocked=2, weighted_secure_ratio=0.575, SCI=-0.2405, R=0.2262, D=0.4667, F=1.7753, K=0.867, regime=sparse
+- t=3: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.3421, R=0.3421, D=0.0000, F=0.5411, K=0.880, regime=secure
+- t=4: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.787, SCI=0.2151, R=0.2702, D=0.0552, F=0.9313, K=0.873, regime=secure
+- t=5: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.2192, R=0.3015, D=0.0823, F=0.8109, K=0.872, regime=secure
+- t=6: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.2129, R=0.2983, D=0.0854, F=0.8326, K=0.868, regime=secure
+- t=7: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1786, R=0.2632, D=0.0846, F=0.7890, K=0.861, regime=transition
+- t=8: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1876, R=0.2739, D=0.0863, F=0.7874, K=0.856, regime=transition
+- t=9: secure=3, best_effort=2, degraded=0, blocked=0, weighted_secure_ratio=0.561, SCI=0.1043, R=0.2479, D=0.1436, F=0.9859, K=0.854, regime=transition
+- t=10: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2821, R=0.2821, D=0.0000, F=0.5754, K=0.863, regime=secure
+- t=11: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2660, R=0.2660, D=0.0000, F=0.6068, K=0.855, regime=secure
+- t=12: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.787, SCI=0.2145, R=0.2726, D=0.0580, F=0.7668, K=0.854, regime=secure
+- t=13: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2733, R=0.2733, D=0.0000, F=0.5494, K=0.865, regime=secure
+- t=14: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2747, R=0.2747, D=0.0000, F=0.5786, K=0.869, regime=secure
+- t=15: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2472, R=0.2472, D=0.0000, F=0.5712, K=0.865, regime=secure
+- t=16: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1457, R=0.2331, D=0.0873, F=0.8107, K=0.859, regime=transition
+- t=17: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1792, R=0.2701, D=0.0910, F=0.8088, K=0.871, regime=transition
+- t=18: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2511, R=0.2511, D=0.0000, F=0.5789, K=0.874, regime=secure
+- t=19: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1817, R=0.2696, D=0.0878, F=0.8406, K=0.865, regime=transition
+- t=20: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1678, R=0.2554, D=0.0877, F=0.7812, K=0.862, regime=transition
+- t=21: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2518, R=0.2518, D=0.0000, F=0.6455, K=0.867, regime=secure
+- t=22: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1859, R=0.2741, D=0.0882, F=0.8475, K=0.855, regime=transition
+- t=23: secure=3, best_effort=2, degraded=0, blocked=0, weighted_secure_ratio=0.561, SCI=0.1004, R=0.2418, D=0.1414, F=1.0912, K=0.849, regime=transition
+- t=24: secure=3, best_effort=2, degraded=0, blocked=0, weighted_secure_ratio=0.561, SCI=0.1097, R=0.2500, D=0.1403, F=1.0707, K=0.858, regime=transition
+- t=25: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2633, R=0.2633, D=0.0000, F=0.6789, K=0.860, regime=secure
+- t=26: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1945, R=0.2765, D=0.0819, F=0.8230, K=0.850, regime=transition
+- t=27: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1827, R=0.2666, D=0.0838, F=0.8811, K=0.838, regime=transition
+- t=28: secure=3, best_effort=1, degraded=0, blocked=1, weighted_secure_ratio=0.561, SCI=-0.0732, R=0.2384, D=0.3116, F=1.3920, K=0.834, regime=transition
+- t=29: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1828, R=0.2666, D=0.0838, F=0.8639, K=0.839, regime=transition
+- t=30: secure=3, best_effort=2, degraded=0, blocked=0, weighted_secure_ratio=0.561, SCI=0.0909, R=0.2334, D=0.1425, F=1.1261, K=0.825, regime=transition
+- t=31: secure=2, best_effort=2, degraded=0, blocked=1, weighted_secure_ratio=0.362, SCI=-0.1648, R=0.1854, D=0.3502, F=1.6416, K=0.835, regime=sparse
+- t=32: secure=1, best_effort=2, degraded=0, blocked=2, weighted_secure_ratio=0.176, SCI=-0.4313, R=0.0995, D=0.5308, F=2.2339, K=0.842, regime=sparse
+- t=33: secure=3, best_effort=2, degraded=0, blocked=0, weighted_secure_ratio=0.561, SCI=0.1098, R=0.2511, D=0.1414, F=1.1157, K=0.852, regime=transition
+- t=34: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.787, SCI=0.2204, R=0.2786, D=0.0582, F=0.7914, K=0.856, regime=secure
+- t=35: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2699, R=0.2699, D=0.0000, F=0.5417, K=0.855, regime=secure
+- t=36: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1475, R=0.2293, D=0.0819, F=0.8612, K=0.854, regime=transition
+- t=37: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2594, R=0.2594, D=0.0000, F=0.5681, K=0.850, regime=secure
+- t=38: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1367, R=0.2270, D=0.0903, F=0.8012, K=0.842, regime=transition
+- t=39: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2486, R=0.2486, D=0.0000, F=0.5998, K=0.854, regime=secure
+- t=40: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1543, R=0.2447, D=0.0904, F=0.8036, K=0.847, regime=transition
+- t=41: secure=3, best_effort=2, degraded=0, blocked=0, weighted_secure_ratio=0.561, SCI=0.0504, R=0.2035, D=0.1530, F=1.1946, K=0.851, regime=transition
+- t=42: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2455, R=0.2455, D=0.0000, F=0.6442, K=0.862, regime=secure
+- t=43: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.787, SCI=0.1726, R=0.2335, D=0.0609, F=0.8429, K=0.856, regime=transition
+- t=44: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2680, R=0.2680, D=0.0000, F=0.6236, K=0.854, regime=secure
+- t=45: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1646, R=0.2490, D=0.0844, F=0.8396, K=0.847, regime=transition
+- t=46: secure=4, best_effort=1, degraded=0, blocked=0, weighted_secure_ratio=0.774, SCI=0.1567, R=0.2423, D=0.0855, F=0.9336, K=0.847, regime=transition
+- t=47: secure=5, best_effort=0, degraded=0, blocked=0, weighted_secure_ratio=1.000, SCI=0.2874, R=0.2874, D=0.0000, F=0.6393, K=0.840, regime=secure
 
 Path stability summary:
-- F1: path_switch_rate=0.609, status_switch_rate=0.087, unique_paths_used=5, blocked_fraction=0.042, secure_fraction=0.000
-- F2: path_switch_rate=0.478, status_switch_rate=0.087, unique_paths_used=3, blocked_fraction=0.000, secure_fraction=0.000
-- F3: path_switch_rate=0.304, status_switch_rate=0.348, unique_paths_used=4, blocked_fraction=0.042, secure_fraction=0.333
-- F4: path_switch_rate=0.391, status_switch_rate=0.565, unique_paths_used=5, blocked_fraction=0.042, secure_fraction=0.333
-- F5: path_switch_rate=0.174, status_switch_rate=0.174, unique_paths_used=2, blocked_fraction=0.000, secure_fraction=0.917
+- F1: path_switch_rate=0.702, status_switch_rate=0.468, key_layer_switch_rate=0.468, unique_paths_used=7, secure_fraction=0.438
+- F2: path_switch_rate=0.787, status_switch_rate=0.340, key_layer_switch_rate=0.340, unique_paths_used=6, secure_fraction=0.729
+- F3: path_switch_rate=0.596, status_switch_rate=0.106, key_layer_switch_rate=0.106, unique_paths_used=6, secure_fraction=0.938
+- F4: path_switch_rate=0.298, status_switch_rate=0.000, key_layer_switch_rate=0.000, unique_paths_used=3, secure_fraction=1.000
+- F5: path_switch_rate=0.404, status_switch_rate=0.043, key_layer_switch_rate=0.043, unique_paths_used=4, secure_fraction=0.979
 
 Exported figures:
-- fig10_sci_over_time_by_method.png
-- fig11_secure_feasible_ratio_by_method.png
-- fig12_allocation_state_composition_by_method.png
-- fig13_per_flow_security_margin_by_method.png
-- fig14_latency_vs_quantum_share_by_method.png
-- fig15_functional_score_by_method.png
+- fig10_regime_threshold_calibration.png
 - fig1_role_aware_topology.png
 - fig2_allocation_outcomes_over_time.png
 - fig3_sci_over_time.png
@@ -70,4 +91,4 @@ Exported figures:
 - fig6_security_margin_vs_latency.png
 - fig7_per_flow_feasibility_and_allocation.png
 - fig8_path_and_status_switching.png
-- fig9_method_overall_comparison.png
+- fig9_free_energy_over_time.png

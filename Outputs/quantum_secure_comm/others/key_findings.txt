@@ -1,0 +1,10 @@
+Nominal: proposed is significantly better than 4/5 baselines in weighted secure ratio (p<0.05): milp_max_secure, max_security, latency_first, pqc_trust.
+nominal: significantly better than ['milp_max_secure', 'max_security', 'latency_first', 'pqc_trust']; significantly worse than none.
+satellite_channel_stress: significantly better than ['milp_max_secure', 'max_security', 'latency_first', 'pqc_trust', 'qkd_priority']; significantly worse than none.
+trust_erosion: significantly better than ['milp_max_secure', 'max_security', 'latency_first', 'pqc_trust', 'qkd_priority']; significantly worse than none.
+congestion_heavy: significantly better than ['milp_max_secure', 'max_security', 'latency_first', 'pqc_trust', 'qkd_priority']; significantly worse than none.
+compound_stress: significantly better than ['milp_max_secure', 'max_security', 'latency_first', 'pqc_trust', 'qkd_priority']; significantly worse than none.
+Prediction: best one-step predictor is SCI_composite (AUC=0.849); SCI alone AUC=0.792 at k=1 and 0.775 at k=5; persistence AUC=0.726 at k=1.
+Ablation: components with a significant positive contribution in at least one scenario: always_qkd_layer, linear_combiner, no_energy_term, no_entropy_term, no_quantum_signal, no_risk_term, no_trust_signal, sequential_greedy.
+Ablation: components without a significant contribution in any scenario: no_key_pressure.
+Energy: at the default lambda_E the energy per secure unit is 1.2640 versus 1.2956 without the energy term, with weighted secure ratio 0.9751 versus 0.9702.
